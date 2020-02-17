@@ -22,12 +22,8 @@ var CryptoJS = CryptoJS || (function (Math, undefined) {
         crypto = global.crypto;
     }
 
-    // Native crypto import via require (NodeJS)
-    if (!crypto && typeof require === 'function') {
-        try {
-            crypto = require('crypto');
-        } catch (err) {}
-    }
+    // remove nodeJS-style `require()`, if anyone still need it, do your own require() 
+    // [example](https://github.com/MikeMcl/bignumber.js/issues/183#issuecomment-412363285)
 
     /*
      * Cryptographically secure pseudorandom number generator
